@@ -22,10 +22,7 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3c26390 (first commit)
 
 app.use("/auth", authRoute);
 

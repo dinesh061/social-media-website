@@ -5,7 +5,7 @@ const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
-const path = require("path");
+
 
 app.use(
   cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
@@ -22,11 +22,6 @@ app.use(
   })
 );
 
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "/client/build")));
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/client/build/index.html"))
-);
 
 app.use("/auth", authRoute);
 

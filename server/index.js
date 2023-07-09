@@ -6,7 +6,6 @@ const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
 
-
 app.use(
   cookieSession({ name: "session", keys: ["lama"], maxAge: 24 * 60 * 60 * 100 })
 );
@@ -21,11 +20,6 @@ app.use(
     credentials: true,
   })
 );
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 3c26390 (first commit)
 
 app.use("/auth", authRoute);
 
